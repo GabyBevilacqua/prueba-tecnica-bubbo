@@ -1,9 +1,9 @@
 /* Contenedor principal del carrusel */
 .media-top-ten-container {
-  margin:auto;
-  padding: 20px;
+
+  padding: 30px;
   background-color: transparent; /* Fondo transparente */
-  max-width: 1200px; /* Ancho máximo del carrusel */
+  max-width: 1300px; /* Ancho máximo del carrusel */
   overflow: hidden; /* Evita que se recorte */
 }
 
@@ -78,12 +78,28 @@
 /* Pantallas medianas (tablets) */
 @media (max-width: 768px) {
   .media-top-ten-container{
-    max-width: 740px;
+    max-width: 100%; /* Asegurar que ocupe todo el ancho */
+    padding: 10px;
   }
 
   .media-top-ten-title {
     font-size: 1.5rem;
-    padding-left: 5px;
+    text-align: center; /* Centrar el título */
+  }
+  .slick-prev,
+  .slick-next {
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%);
+    width: 30px; /* Reducir tamaño */
+    height: 30px;
+  }
+
+  .slick-prev {
+    left: 5px; /* Ajustar posición izquierda */
+  }
+
+  .slick-next {
+    right: 5px; /* Ajustar posición derecha */
   }
 }
 
@@ -95,7 +111,27 @@
 
   .media-top-ten-title {
     font-size: 1.25rem;
-    padding-left: 5px;
     text-align: center;
+  }
+  .slick-prev,
+  .slick-next {
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%);
+    width: 30px; /* Reducir tamaño */
+    height: 30px;
+  }
+
+  .slick-prev {
+    left: 5px; /* Ajustar posición izquierda */
+  }
+
+  .slick-next {
+    right: 5px; /* Ajustar posición derecha */
+  }
+
+  .slick-list {
+    margin: 0; /* Eliminar márgenes */
+    padding: 0 10px; /* Agregar padding interno para evitar cortes */
+    overflow: hidden; /* Asegurar que no se recorten las imágenes */
   }
 }

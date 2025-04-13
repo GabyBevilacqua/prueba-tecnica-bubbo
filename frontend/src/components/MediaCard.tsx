@@ -6,13 +6,14 @@ type Props = {
   posterPath: string;
   index: number;
   id: number; // Agregar el ID del elemento
+  category: string; // Agregar categoría
 };
 
-export default function MediaCard({ title, posterPath, index, id }: Props) {
+export default function MediaCard({ title, posterPath, index, id, category }: Props) {
   const router = useRouter();
 // agregar la categoria
   const handleCardClick = () => {
-    router.push(`/details/${id}`); // Navegar a la página de detalles
+    router.push(`/details/${id}?category=${category}`); // Navegar a la página de detalles Pasar la categoría como query param
   };
 
   return (

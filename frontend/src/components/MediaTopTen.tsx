@@ -28,7 +28,7 @@ interface Movie {
   // agregar otras propiedades
 }
 
-export default function MediaTopTen({ titulo, apiUrl }: { titulo: string; apiUrl: string }) {
+export default function MediaTopTen({ titulo, apiUrl, category }: { titulo: string; apiUrl: string; category: string }) {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -131,6 +131,7 @@ export default function MediaTopTen({ titulo, apiUrl }: { titulo: string; apiUrl
             title={movie.title}
             posterPath={movie.poster_path}
             index={index}
+            category={category} // Pasar la categoría
           />
         ))}
       </Slider>

@@ -1,7 +1,7 @@
 /* Contenedor principal de la tarjeta */
 .media-card {
-    width: 180px;
-    max-width: 180px;
+    width: 200px;
+    max-width: 250px;
     flex-shrink: 0; /* Evita que se reduzcan */
     height: auto;
     position: relative;
@@ -41,14 +41,6 @@
     align-items: center;
     justify-content: flex-end;
     padding: 0 15px;
-    transform: translateY(100%);
-    /* Ocultar inicialmente */
-    transition: transform 0.3s ease-in-out;
-}
-
-.media-card:hover .movie-info {
-    transform: translateY(0);
-    /* Mostrar al pasar el mouse */
    
 }
 
@@ -67,7 +59,7 @@
 
 /* Título de la película */
 .movie-title {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
@@ -76,16 +68,29 @@
     overflow: hidden; /* Evitar desbordamiento */
     word-wrap: break-word; /* Romper palabras largas si es necesario */
     line-height: 1.2; /* Ajustar el espacio entre líneas */
-    padding-right: 10px;
+    padding-right: 5px;
+    padding-left: 35px;
 }
 
 /* ----------- Responsividad ----------- */
+
+/* Transición solo en pantallas grandes */
+@media (min-width: 1024px) {
+    .movie-info {
+        transform: translateY(100%); /* Ocultar inicialmente */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .media-card:hover .movie-info {
+        transform: translateY(0); /* Mostrar al pasar el mouse */
+    }
+}
 
 /* Pantallas medianas (tablets) */
 @media (max-width: 768px) {
     .media-card {
         min-width: 150px;
-        max-width: 200px;
+        max-width: 180px;
     }
 
     .movie-title {
@@ -94,14 +99,17 @@
     }
 
     .rank {
-        font-size: 1.2rem;
+        font-size: 2rem;
+    }
+    .movie-info{
+        height: 60px;
     }
 }
 
 /* Pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
     .media-card {
-        min-width: 120px;
+        min-width: 100px;
         max-width: 150px;
     }
 
@@ -111,6 +119,9 @@
     }
 
     .rank {
-        font-size: 1rem;
+        font-size: 2rem;
     }
+    .movie-info{
+    height: 50px;
+}
 }

@@ -8,8 +8,6 @@
     display: flex;
     flex-direction: row;
     /* Cambiado a fila */
-    justify-content: center;
-    /* Centrar horizontalmente */
     align-items: center;
     /* Centrar verticalmente */
     justify-content: space-between;
@@ -46,11 +44,13 @@ p {
 }
 
 .user-page {
-    max-width: auto;
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    max-width: 100%; /* Evitar restricciones de ancho */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px; /* Añadir padding para evitar que los elementos se peguen a los bordes */
 
 }
 
@@ -92,16 +92,17 @@ p {
 
 /* Responsividad */
 @media (max-width: 768px) {
-    .user-page {
-        height: auto;
-    }
+
     .user-header {
-        flex-direction: column;
-        /* Cambiado a columna */
-        height: auto;
-        /* Cambiado a auto */
-        width: auto;
-       
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center; /* Centrar los elementos */
+        justify-content: center; /* Centrar los elementos */
+        width: 90%;
+        height: 300px;
+    }
+
+    .logout-button {
+        padding: 0;
     }
 
     .user-texts {
@@ -109,7 +110,7 @@ p {
         /* Centrar texto en pantallas pequeñas */
         margin-left: 0;
         /* Eliminar margen izquierdo */
-        margin-top: 10px;
+        margin-top: 5px;
         /* Añadir margen superior */
     }
 

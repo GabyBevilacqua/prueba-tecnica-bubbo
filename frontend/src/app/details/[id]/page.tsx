@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import Link from "next/link"; // Importar Link para navegación
 import "./details.css";
+import { useSearchParams } from "next/navigation"; // Importar para obtener query params
 
 interface MovieDetails {
     title: string;
@@ -22,7 +23,10 @@ export default function DetailsPage() {
     const [movieDetails, setMovieDetails] = useState<MovieDetails | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-// obtener tambien la categoria
+    const searchParams = useSearchParams(); // Obtener los query params
+    const category = searchParams.get("category"); // Obtener la categoría
+    // obtener tambien la categoria
+
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {
@@ -33,11 +37,20 @@ export default function DetailsPage() {
                         Authorization: process.env.NEXT_PUBLIC_TMDB_AUTH || "",
                     },
                 };
-// 'https://api.themoviedb.org/3/tv/series_id?language=en-US', options)
-                const response = await fetch(
-                    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
-                    options
-                );
+                // 'https://api.themoviedb.org/3/tv/series_id?language=en-US', options)
+                
+                // const response = await fetch(
+                //     `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+                //     options
+                // );
+
+                const url =
+                    category === "movie"
+                        ? `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+                        : `https://api.themoviedb.org/3/tv/${id}?language=en-US`;
+
+                const response = await fetch(url, options);
+
 
                 if (!response.ok) {
                     throw new Error(`Error ${response.status}: ${response.statusText}`);
@@ -55,7 +68,7 @@ export default function DetailsPage() {
         };
 
         fetchMovieDetails();
-    }, [id]);
+    }, [id, category]);
 
     if (loading) return <div>Cargando...</div>;
     if (error) return <div>{error}</div>;
@@ -63,7 +76,7 @@ export default function DetailsPage() {
     return (
         <div className="details-container">
             <div className="details-poster">
-                
+
                 <img
                     src={`https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`}
                     alt={movieDetails?.title}

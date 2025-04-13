@@ -10,11 +10,9 @@ import MediaTopTen from "@/components/MediaTopTen";
 import "./user.css";
 
 import { useRouter } from "next/navigation";
-//import Cookies from "js-cookie"; // Para manejar cookies
 import Swal from "sweetalert2";
 import { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -26,9 +24,6 @@ gsap.registerPlugin(ScrollTrigger);
 // Para manejar cookies
 const Cookies = require("js-cookie");
 
-//const userName: string = "userName";
-//const userEmail: string = "userEmail";
-
 export default function UserPage() {
   const router = useRouter();
   const [userName, setUserName] = useState<string | null>("Sin nombre"); // Valor predeterminado
@@ -36,7 +31,6 @@ export default function UserPage() {
   const faCircle = useRef(null);
 
   useGSAP(() => {
-
     gsap.to(faCircle.current, {
       rotation: 360,
       duration: 3,
@@ -77,9 +71,6 @@ export default function UserPage() {
         // Eliminar la cookie de autenticación
         Cookies.remove("auth");
 
-        // Eliminar los datos del usuario de localStorage
-        //localStorage.removeItem("user");
-
         // Mostrar alerta de éxito
         Swal.fire({
           title: "Sesión cerrada",
@@ -116,16 +107,19 @@ export default function UserPage() {
       <MediaTopTen
         titulo="Top 10 Películas Populares"
         apiUrl={apiTMDB.topTenMovie}
+        category="movie" // Agregar categoría para poder definir la ruta de la api
       />
 
       <MediaTopTen
         titulo="Top 10 Series Populares"
         apiUrl={apiTMDB.topTenSerie}
+        category="tv" // Agregar categoría para poder definir la ruta de la api
       />
 
       <MediaTopTen
         titulo="Top 10 Próximos Estrenos"
         apiUrl={apiTMDB.moviesUpcoming}
+        category="movie" // Agregar categoría para poder definir la ruta de la api
       />
     </div>
   );
