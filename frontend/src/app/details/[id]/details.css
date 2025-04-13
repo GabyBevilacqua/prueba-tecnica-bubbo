@@ -1,0 +1,90 @@
+/* Estilos para el contenedor principal */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffffff;
+  background-color: rgba(16, 28, 53, 0.8); /* Fondo transparente */
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+@media (min-width: 1024px) {
+  .details-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 1200px;
+  }
+}
+
+/* Estilos para la sección de información */
+.details-overview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  margin-left: 10px;
+  color: #ffffff !important;
+}
+
+/* Estilos para el poster */
+.details-poster {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .details-poster {
+    max-width: 400px; /* Reducido de 600px a 500px */
+  }
+}
+
+/* Estilos para los encabezados */
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ffffff
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Estilos para los párrafos */
+p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #ffffff
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Estilos para el botón de regresar */
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #005bb5;
+}

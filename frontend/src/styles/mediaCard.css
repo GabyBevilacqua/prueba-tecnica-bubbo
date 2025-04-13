@@ -1,0 +1,116 @@
+/* Contenedor principal de la tarjeta */
+.media-card {
+    width: 180px;
+    max-width: 180px;
+    flex-shrink: 0; /* Evita que se reduzcan */
+    height: auto;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent; /* Borde transparente por defecto */
+   
+}
+
+.media-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    border-color: white; /* Cambiar el color del borde en hover */
+   
+}
+
+/* Imagen del póster */
+.poster-image {
+    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Contenedor del título y el índice */
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 90px;
+    background-color: rgba(46, 61, 100, 0.747);
+    /* Fondo translúcido */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+    transform: translateY(100%);
+    /* Ocultar inicialmente */
+    transition: transform 0.3s ease-in-out;
+}
+
+.media-card:hover .movie-info {
+    transform: translateY(0);
+    /* Mostrar al pasar el mouse */
+   
+}
+
+/* Rango de la película */
+.rank {
+    position: absolute;
+    bottom: 3px;
+    left: 10px;
+    font-size: 5rem;
+    color: rgb(97, 153, 255);
+    font-weight: bold;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    /* Sombra para mejor visibilidad */
+    z-index: 5;
+}
+
+/* Título de la película */
+.movie-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: right; /* Justificar a la derecha */
+    white-space: normal; /* Permitir que el texto pase a la siguiente línea */
+    overflow: hidden; /* Evitar desbordamiento */
+    word-wrap: break-word; /* Romper palabras largas si es necesario */
+    line-height: 1.2; /* Ajustar el espacio entre líneas */
+    padding-right: 10px;
+}
+
+/* ----------- Responsividad ----------- */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .media-card {
+        min-width: 150px;
+        max-width: 200px;
+    }
+
+    .movie-title {
+        font-size: 0.9rem;
+        padding: 4px;
+    }
+
+    .rank {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .media-card {
+        min-width: 120px;
+        max-width: 150px;
+    }
+
+    .movie-title {
+        font-size: 0.8rem;
+        padding: 3px;
+    }
+
+    .rank {
+        font-size: 1rem;
+    }
+}

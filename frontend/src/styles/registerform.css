@@ -1,0 +1,168 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #101c35;
+    margin-top: 25px;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.register-form {
+    background-color: #101c35;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.register-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #7c8faf;
+}
+
+.register-field {
+    margin-bottom: 1rem;
+}
+
+.register-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #7c8faf;
+}
+
+.register-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: #000000;
+    /* color del texto en el input */
+    background-color: #ffffff;
+    /* Fondo blanco para contraste */
+}
+
+.register-input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4299e1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.register-button:hover {
+    background-color: #3182ce;
+}
+
+/* ---------Barra de fortaleza de la contraseña-------- */
+
+.password-strength-bar {
+    height: 8px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 5px;
+    position: relative;
+  }
+  
+  .password-strength-bar div {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .strength-0 {
+    width: 0%;
+    background-color: transparent;
+  }
+  
+  .strength-1 {
+    width: 20%;
+    background-color: red;
+  }
+  
+  .strength-2 {
+    width: 40%;
+    background-color: orange;
+  }
+  
+  .strength-3 {
+    width: 60%;
+    background-color: yellow;
+  }
+  
+  .strength-4 {
+    width: 80%;
+    background-color: lightgreen;
+  }
+  
+  .strength-5 {
+    width: 100%;
+    background-color: green;
+  }
+  
+  /* ---------Requisitos de la contraseña---------- */
+
+  .password-requirements {
+    font-size: 0.8rem;
+    color: #7c8faf;
+    margin-top: 5px;
+  }
+
+  .password-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: -37px;
+    color: #7c8faf;
+  }
+  
+  .toggle-password:hover {
+    color: #4299e1;
+  }
+
+@media (max-width: 768px) {
+    .register-form {
+        padding: 15px;
+    }
+
+    .register-title {
+        font-size: 1.25rem;
+    }
+
+    .register-input {
+        font-size: 0.9rem;
+    }
+
+    .register-button {
+        font-size: 0.9rem;
+    }
+}

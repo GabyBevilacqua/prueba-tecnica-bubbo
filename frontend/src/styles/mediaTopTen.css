@@ -1,0 +1,101 @@
+/* Contenedor principal del carrusel */
+.media-top-ten-container {
+  margin:auto;
+  padding: 20px;
+  background-color: transparent; /* Fondo transparente */
+  max-width: 1200px; /* Ancho máximo del carrusel */
+  overflow: hidden; /* Evita que se recorte */
+}
+
+/* Ajustar el contenedor del carrusel para evitar que las tarjetas se desplacen */
+.slick-slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-list {
+  margin: 0 -10px; /* Compensar el padding */
+  overflow: visible !important;
+}
+
+/* Asegura que las flechas estén por encima de las tarjetas */
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  top: 45%; /* Posición vertical en el medio del carrusel */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-prev {
+  left: -20px; 
+}
+
+.slick-next {
+  right: -20px;
+}
+
+/* Opcional: Hover visual */
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+/* Título del carrusel */
+.media-top-ten-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff; /* Color claro para el título */
+  text-align: left;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.media-top-ten-icon{
+  font-size: 3rem;
+  color : white;
+  margin-left: 30px;
+}
+
+/* ----------- Responsividad ----------- */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .media-top-ten-container{
+    max-width: 740px;
+  }
+
+  .media-top-ten-title {
+    font-size: 1.5rem;
+    padding-left: 5px;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .media-top-ten-container{
+    max-width: 410px;
+  }
+
+  .media-top-ten-title {
+    font-size: 1.25rem;
+    padding-left: 5px;
+    text-align: center;
+  }
+}

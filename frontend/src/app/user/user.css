@@ -1,0 +1,125 @@
+.user-header {
+    background-image: url('https://img.freepik.com/foto-gratis/composicion-elementos-pelicula-vista-superior-sobre-fondo-blanco_23-2148416827.jpg?t=st=1744456576~exp=1744460176~hmac=ecc4e86b60a59529bb70b58d37be09d17ed5824ffab00aed3b94181457a02268&w=996');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    /* Cambiado de max-width: auto; a width: 100%; */
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    /* Cambiado a fila */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    justify-content: space-between;
+    /* esto reemplaza el gap */
+    margin: 10px;
+    /* Asegurar que no haya márgenes */
+    padding: 0;
+    /* Asegurar que no haya padding */
+    border: solid white;
+}
+
+.user-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* texto a la izquierda */
+    margin-left: 25px;
+    background-color: rgba(59, 89, 114, 0.644);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0.5rem 0;
+}
+
+.user-page {
+    max-width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Estilo para los datos del usuario */
+.user-info {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    font-size: 4rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: rgb(97, 14, 14);
+    margin-right: 20px;
+}
+
+/* Agregar efecto hover para cambiar el tamaño del botón de logout */
+.logout-button:hover {
+    transform: scale(1.1);
+    /* Aumentar el tamaño al 110% */
+    transition: transform 0.3s ease;
+    /* Transición suave */
+}
+
+/* Carruseles */
+.media-top-ten {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.media-top-ten h2 {
+    margin-left: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .user-page {
+        height: auto;
+    }
+    .user-header {
+        flex-direction: column;
+        /* Cambiado a columna */
+        height: auto;
+        /* Cambiado a auto */
+        width: auto;
+       
+    }
+
+    .user-texts {
+        align-items: center;
+        /* Centrar texto en pantallas pequeñas */
+        margin-left: 0;
+        /* Eliminar margen izquierdo */
+        margin-top: 10px;
+        /* Añadir margen superior */
+    }
+
+    .user-texts h1 {
+        font-size: 2rem;
+        /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    }
+
+    .user-texts p {
+        font-size: 1rem;
+        /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    }
+}

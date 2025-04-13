@@ -1,0 +1,67 @@
+# --- Reglas globales --- 
+.DS_Store          # Archivos del sistema operativo
+*.log              # Archivos de log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.temp              # Archivos temporales
+.tmp
+*.tsbuildinfo      # Caché de TypeScript
+report.*.json      # Reportes de diagnóstico
+*.pid              # Archivos de procesos
+*.seed
+*.pem              # Archivos de claves
+package-lock.json  # Archivo de bloqueo de dependencias
+yarn.lock
+pnpm-lock.yaml
+
+# --- Frontend específico ---
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# --- Backend específico ---
+backend/node_modules/
+backend/dist/
+
+# --- Dependencias generales ---
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# --- Archivos de testing ---
+frontend/coverage/
+backend/coverage/
+frontend/.nyc_output/
+backend/.nyc_output/
+
+# --- IDEs y editores ---
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# --- Vercel ---
+frontend/.vercel
+
+# --- Swagger (opcional, si se usa en backend) ---
+backend/swagger.*
+
+frontend/.env.local
+frontend/.next/
+backend/dist/
