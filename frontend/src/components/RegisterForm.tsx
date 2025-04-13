@@ -1,9 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import "../styles/registerform.css";
 
 import Swal from "sweetalert2";
+
+// para la animacion con gsap
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function RegisterForm() {
     const [name, setName] = useState("");
@@ -14,6 +21,12 @@ export default function RegisterForm() {
     const [showPassword, setShowPassword] = useState(false); //visibilidad de la contraseña
     const [showConfirmPassword, setShowConfirmPassword] = useState(false); // visibilidad de la confirmacion de contraseña
     const router = useRouter();
+
+    const registerRef = useRef<HTMLDivElement>(null); // referencia al contenedor del formulario
+
+    useGSAP(() => {
+        gsap.from(registerRef.current, { opacity: 0, y: 60, duration: 1.2 });
+    });
 
     // Función para evaluar la fortaleza de la contraseña
     const evaluatePasswordStrength = (password: string) => {
@@ -82,7 +95,7 @@ export default function RegisterForm() {
     };
 
     return (
-        <div className="register-container">
+        <div className="register-container" ref= {registerRef}>
             <form onSubmit={handleSubmit} className="register-form">
                 <h2 className="register-title">REGISTRARSE</h2>
                 <div className="register-field">

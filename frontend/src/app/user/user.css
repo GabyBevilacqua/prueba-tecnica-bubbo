@@ -1,22 +1,20 @@
 .user-header {
-    background-image: url('https://img.freepik.com/foto-gratis/composicion-elementos-pelicula-vista-superior-sobre-fondo-blanco_23-2148416827.jpg?t=st=1744456576~exp=1744460176~hmac=ecc4e86b60a59529bb70b58d37be09d17ed5824ffab00aed3b94181457a02268&w=996');
+    background-image: url('https://res.cloudinary.com/dzqgni1qi/image/upload/v1744565623/banner02_hnedkp.webp');
     background-size: cover;
     background-position: center;
-    width: 100%;
-    /* Cambiado de max-width: auto; a width: 100%; */
-    height: 250px;
+    width: 100%; 
     display: flex;
     flex-direction: row;
     /* Cambiado a fila */
     align-items: center;
     /* Centrar verticalmente */
     justify-content: space-between;
-    /* esto reemplaza el gap */
-    margin: 10px;
+    margin: 0;
     /* Asegurar que no haya márgenes */
     padding: 0;
     /* Asegurar que no haya padding */
-    border: solid white;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 .user-texts {
@@ -24,8 +22,9 @@
     flex-direction: column;
     align-items: flex-start;
     /* texto a la izquierda */
-    margin-left: 25px;
-    background-color: rgba(59, 89, 114, 0.644);
+    margin: 15px 0 15px 25px;
+    background-color: rgba(104, 7, 7, 0.76);
+    border: 2px solid rgba(104, 62, 7, 0.76);
     border-radius: 15px;
     padding: 10px;
 }
@@ -66,7 +65,7 @@ p {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    color: rgb(97, 14, 14);
+    color: rgb(255, 255, 255);
     margin-right: 20px;
 }
 
@@ -97,11 +96,11 @@ p {
         flex-direction: column; /* Cambiar a columna */
         align-items: center; /* Centrar los elementos */
         justify-content: center; /* Centrar los elementos */
-        width: 90%;
-        height: 300px;
+        width: 90%;    
     }
 
     .logout-button {
+        font-size: 3rem;
         padding: 0;
     }
 
